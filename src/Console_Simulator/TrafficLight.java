@@ -16,9 +16,9 @@ public class TrafficLight {
         this.lightColour = lightColour;
     }
 
-    private void changeLight(int lightColour) {
+    public void checkLight(int lightColour) {
 
-        switch (lightColour) {
+        switch (lightColour) {  // most of this repeated code should be made a function
 
             case 1:
                 int countRed = 2;

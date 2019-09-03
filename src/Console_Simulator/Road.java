@@ -6,6 +6,7 @@ public class Road {
     private boolean hasTrafficLight;
 
     public Road(int roadSegments, boolean hasTrafficLight) {
+
         this.roadSegments = roadSegments;
         this.hasTrafficLight = hasTrafficLight;
     }
