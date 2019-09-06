@@ -20,10 +20,10 @@ public class Car {
 
         setPosition(getPosition() + 1);
         System.out.println("Moving down road");
-        //       stopForLight();
+        //     stopForLight();
     }
 
- /*   public void stopForLight(){
+  /*  public void stopForLight(){
 
         if (Road.getRoadSegments() == position){
             if (TrafficLight.getLightColour() == 2){
