@@ -1,10 +1,12 @@
 package ConsoleSimulator;
 
 class Road {
+
     private int length;
     private int roadConnector;
 
     Road(int length, int roadConnector) {
+
         this.length = length;
         this.roadConnector = roadConnector;
     }

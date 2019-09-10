@@ -65,6 +65,5 @@ class Car {
             System.out.println("Cars position is " + car.getPosition() + " on road " + car.getRoad());
             trafficLight.tl(car, trafficLight, road);
         }
-
     }
 }
