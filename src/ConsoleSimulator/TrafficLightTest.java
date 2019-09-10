@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TrafficLightTest {
 
-    TrafficLight trafficLight = new TrafficLight(1, 3);
+    private TrafficLight trafficLight = new TrafficLight(1, 3);
 
     @Test
     void TrafficLightTest() {

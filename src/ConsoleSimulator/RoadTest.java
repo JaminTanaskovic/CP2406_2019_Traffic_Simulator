@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RoadTest {
 
-    Road road1 = new Road(5, 2);
+    private Road road1 = new Road(5, 2);
 
     @Test
     void RoadTest() {
