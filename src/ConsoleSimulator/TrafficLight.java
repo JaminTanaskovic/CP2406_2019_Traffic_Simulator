@@ -29,7 +29,7 @@ class TrafficLight {
         this.changeCount = changeCount;
     }
 
-    void tl(Car car, TrafficLight trafficLight, Road road) {
+    void tl(Car car, TrafficLight trafficLight, Road road1, Road road2) {
         int randInt = rand.nextInt(2);
         if (randInt == 0) {
             trafficLight.setColour(0); //red
@@ -38,6 +38,6 @@ class TrafficLight {
             trafficLight.setColour(1); //green
             System.out.println("light is green");
         }
-        car.move(car, trafficLight, road);
+        car.move(car, trafficLight, road1, road2);
     }
 }

@@ -3,13 +3,14 @@ package ConsoleSimulator;
 class Car {
 
     private int position;
-    private int road;
     private int iterationCount = 0;
     private int stopCount = 0;
+    private int length = 2;
+    private Road road1;
 
-    Car(int position, int road) {
+    Car(int position, Road road1) {
         this.position = position;
-        this.road = road;
+        this.road1 = road1;
     }
 
     int getPosition() {
@@ -20,50 +21,53 @@ class Car {
         this.position = position;
     }
 
-    int getRoad() {
-        return road;
+    Road getRoad() {
+        return road1;
     }
 
-    void setRoad(int road) {
-        this.road = road;
+    void setRoad(Road road) {
+        this.road1 = road;
     }
 
-    void move(Car car, TrafficLight trafficLight, Road road) {
+    int getLength() {
+        return length;
+    }
 
-        if (car.getPosition() < 5) {  //if car position is less then the end
-            car.setPosition(getPosition() + 1);
+    void move(Car car, TrafficLight trafficLight, Road road1, Road road2) {
+
+        if (getPosition() < 5) {  //if car position is less then the end traffic lights won't stop it
+            setPosition(getPosition() + 1);
             System.out.println("car keeps moving");
-            System.out.println("Cars position is " + car.getPosition() + " on road " + car.getRoad());
-            trafficLight.tl(car, trafficLight, road);
+            System.out.println("Cars position is " + getPosition() + " on road " + getRoad().getRoadConnector());
+            trafficLight.tl(car, trafficLight, road1, road2);
 
-        } else if ((car.getPosition() == 5) && (trafficLight.getColour() == 1) && (car.getRoad() == 1)) {
+        } else if ((getPosition() == 5) && (trafficLight.getColour() == 1) && (getRoad() == road1)) {
             //if car is in final position and traffic light is green and you are on road 1
-            car.setRoad(2);
-            car.setPosition(0);
-            System.out.println("car goes to road " + road.getRoadConnector());
-            System.out.println("Cars position is " + car.getPosition() + " on road " + car.getRoad());
-            trafficLight.tl(car, trafficLight, road);
+            setRoad(road2);
+            setPosition(0);
+            System.out.println("car goes to road " + road2.getRoadConnector());
+            System.out.println("Cars position is " + getPosition() + " on road " + getRoad().getRoadConnector());
+            trafficLight.tl(car, trafficLight, road1, road2);
 
-        } else if ((car.getPosition() == 5) && (car.getRoad() == 2)) {
+        } else if ((getPosition() == 5) && (getRoad() == road2)) {
             iterationCount++;
-            //total of two iterations
-            int totalIterations = 2;
+            int totalIterations = 2;  //total of two iterations
             for (int i = iterationCount; i < totalIterations; i++) {
-                car.setRoad(1);
-                car.setPosition(0);
+                setRoad(road1);
+                setPosition(0);
                 System.out.println("starting demo run again");
                 System.out.println("iteration " + iterationCount);
-                move(car, trafficLight, road);
+                move(car, trafficLight, road1, road2);
+                System.out.println("The car went through " + iterationCount + " iterations");
+                System.out.println("the car stopped at the lights " + stopCount + " times");
             }
-            System.out.println("The car went through " + iterationCount + " iterations");
-            System.out.println("the car stopped at the lights " + stopCount + " times");
 
         } else {
             stopCount++;
-            car.setPosition(5); //if car has red light stay in same spot
+            setPosition(5); //if car has red light stay in same spot
             System.out.println("car stays still");
-            System.out.println("Cars position is " + car.getPosition() + " on road " + car.getRoad());
-            trafficLight.tl(car, trafficLight, road);
+            System.out.println("Cars position is " + getPosition() + " on road " + getRoad().getRoadConnector());
+            trafficLight.tl(car, trafficLight, road1, road2);
         }
     }
 }
