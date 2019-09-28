@@ -6,32 +6,32 @@ import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
 
-    JFrame frame = new JFrame("GUI Traffic Simulator");
-    JPanel mainPanel = new JPanel(new BorderLayout());
+    private JFrame frame = new JFrame("GUI Traffic Simulator");
+    private JPanel mainPanel = new JPanel(new BorderLayout());
 
     //Creating the MenuBar and adding components
-    JMenuBar menuBar = new JMenuBar();
+    private JMenuBar menuBar = new JMenuBar();
 
-    JMenu m1 = new JMenu("City Editing");
-    JMenu m2 = new JMenu("Simulation");
+    private JMenu m1 = new JMenu("City Editing");
+    private JMenu m2 = new JMenu("Simulation");
 
-    JMenuItem newCity = new JMenuItem("New City");
-    JMenuItem editCity = new JMenuItem("Edit a City");
-    JMenuItem openCity = new JMenuItem("Open a City");
-    JMenuItem saveCity = new JMenuItem("Save a City");
+    private JMenuItem newCity = new JMenuItem("New City");
+    private JMenuItem editCity = new JMenuItem("Edit a City");
+    private JMenuItem openCity = new JMenuItem("Open a City");
+    private JMenuItem saveCity = new JMenuItem("Save a City");
 
-    JMenuItem updateRate = new JMenuItem("Set Update Rate");
-    JMenuItem vehicleRate = new JMenuItem("Set Vehicle Spawn Rate");
-    JMenuItem runSim = new JMenuItem("Run The Simulator");
-    JMenuItem stopSim = new JMenuItem("Stop The Simulator");
+    private JMenuItem updateRate = new JMenuItem("Set Update Rate");
+    private JMenuItem vehicleRate = new JMenuItem("Set Vehicle Spawn Rate");
+    private JMenuItem runSim = new JMenuItem("Run The Simulator");
+    private JMenuItem stopSim = new JMenuItem("Stop The Simulator");
 
     //Creating the panel at bottom and adding components
-    JPanel bottomPanel = new JPanel(); // the panel is not visible in output
+    private JPanel bottomPanel = new JPanel(); // the panel is not visible in output
 
-    JLabel modeLabel = new JLabel("Mode");
-    JLabel modeLabelStats = new JLabel("Mode stats");
-    JLabel statusLabel = new JLabel("Status");
-    JLabel statusLabelStats = new JLabel("Status stats");
+    private JLabel modeLabel = new JLabel("Mode");
+    private JLabel modeLabelStats = new JLabel("Mode stats");
+    private JLabel statusLabel = new JLabel("Status");
+    private JLabel statusLabelStats = new JLabel("Status stats");
 
     public MainFrame() {
 
@@ -43,7 +43,7 @@ public class MainFrame extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    public void setup() {
+    private void setup() {
 
         menuBar.add(m1);
         menuBar.add(m2);
