@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class RoadTest {
+class StraightRoadTest {
 
     private Road road1 = new Road(5, 2);
 
