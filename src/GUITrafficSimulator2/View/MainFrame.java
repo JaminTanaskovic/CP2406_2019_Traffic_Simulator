@@ -1,4 +1,4 @@
-package GUITrafficSimulator.View;
+package GUITrafficSimulator2.View;
 
 import javax.swing.*;
 import java.awt.*;

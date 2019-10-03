@@ -15,7 +15,8 @@ public class Controller {
         Bike bike = new Bike(0, 1, 1, 0);
         Bus bus = new Bus(1, 0, 0, 1);
         TJunctionRoad tJunctionRoad = new TJunctionRoad(6, 1, 1, 1);
-        FourWayRoad fourWayRoad = new FourWayRoad(18, 1, 1, 1);
+        StraightRoad straightRoad = new StraightRoad(12, 1, 2, 1);
+        // FourWayRoad fourWayRoad = new FourWayRoad(18, 1, 1, 1);
 
         mainFrame.setNewCityMenuListener(e -> {
 
@@ -58,6 +59,5 @@ public class Controller {
         mainFrame.setStopSimMenuListener(e -> {
             System.exit(0);
         });
-
     }
 }

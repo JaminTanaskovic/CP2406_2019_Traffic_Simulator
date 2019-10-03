@@ -1,23 +1,34 @@
+/*
 package GUITrafficSimulator.Model;
 
+import java.util.Random;
+
+import static GUITrafficSimulator.Model.Road.TurnDirection.*;
+
 public class FourWayRoad extends Road {
-    Enum description = {STRAIGHT, TJUNCTION, FOURWAY;
-}
+
+    Random random = new Random();
 
     public FourWayRoad(int length, int lane1, int lane2, int connector) {
         super(length, lane1, lane2, connector);
     }
 
     @Override
-    public boolean canTurn() {
-        if ((length == this.length) && (this.description != STRAIGHT)) {
-            
-        }
-        return false;
+    public void canTurn() {
+
     }
 
     @Override
-    public void turnDecision() {
+    public TurnDirection turnDecision() {
+        if ((length == this.length)) {
+            return values()[random.nextInt(values().length)];
+
+            if ( == LEFT){
+
+            }
+        }
+        return null;
 
     }
-}
+}*/
+

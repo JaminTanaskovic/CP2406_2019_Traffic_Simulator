@@ -4,6 +4,12 @@ import java.awt.*;
 
 
 public abstract class Road {
+    public TurnDirection turnDirection;
+    public RoadType roadType;
+
+    public abstract void canTurn();
+
+    public abstract TurnDirection turnDecision();
     int length, lane1, lane2, connector;
     Color color = Color.gray;
 
@@ -59,7 +65,9 @@ public abstract class Road {
         this.connector = connector;
     }
 
-    public abstract boolean canTurn();
+    public abstract void draw(Graphics g);
 
-    public abstract void turnDecision();
+    public enum RoadType {STRAIGHT, TJUNCTION, FOURWAY}
+
+    public enum TurnDirection {LEFT, FORWARD, RIGHT}
 }
