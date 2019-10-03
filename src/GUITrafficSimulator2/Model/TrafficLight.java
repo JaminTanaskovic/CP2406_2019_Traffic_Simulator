@@ -2,13 +2,13 @@ package GUITrafficSimulator2.Model;
 
 import java.util.Random;
 
-class TrafficLight {
+public class TrafficLight {
 
     private int colour;
     private int changeCount;
     private Random rand = new Random();
 
-    TrafficLight(int colour, int changeCount) {
+    public TrafficLight(int colour, int changeCount) {
         this.colour = colour;
         this.changeCount = changeCount;
     }

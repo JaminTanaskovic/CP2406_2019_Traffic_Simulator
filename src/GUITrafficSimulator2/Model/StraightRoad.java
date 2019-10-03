@@ -1,22 +1,43 @@
 package GUITrafficSimulator2.Model;
 
-public class StraightRoad {
+import java.awt.*;
+
+public class StraightRoad extends Road {
 
     private int length;
     private int roadConnector;
 
-    StraightRoad(int length, int roadConnector) {
+    public StraightRoad(int lane1, int lane2, int connector) {
+        super(1, 2, 1);
 
-        this.length = length;
-        this.roadConnector = roadConnector;
+        this.lane1 = lane1;
+        this.lane2 = lane2;
+        this.connector = connector;
     }
 
-    int getLength() {
+/*    public int getLength() {
         return length;
     }
 
-    void setLength(int length) {
+    public void setLength(int length) {
         this.length = length;
+    }*/
+
+    @Override
+    public void canTurn() {
+        if (length == getRoadLength()) {
+
+        }
+    }
+
+    @Override
+    public void turnDecision() {
+
+    }
+
+    @Override
+    public void draw(Graphics g) {
+
     }
 
     int getRoadConnector() {

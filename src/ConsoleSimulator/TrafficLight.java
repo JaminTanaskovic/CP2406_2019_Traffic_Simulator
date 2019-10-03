@@ -1,5 +1,7 @@
 package ConsoleSimulator;
 
+import GUITrafficSimulator2.Model.StraightRoad;
+
 import java.util.Random;
 
 class TrafficLight {
@@ -29,7 +31,7 @@ class TrafficLight {
         this.changeCount = changeCount;
     }
 
-    void tl(Car car, TrafficLight trafficLight, Road road1, Road road2) {
+    void tl(Car car, TrafficLight trafficLight, StraightRoad road1, StraightRoad road2) {
         int randInt = rand.nextInt(2);
         if (randInt == 0) {
             trafficLight.setColour(0); //red

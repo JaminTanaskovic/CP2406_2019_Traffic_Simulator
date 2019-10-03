@@ -13,11 +13,11 @@ public abstract class Road {
         this.connector = connector;
     }
 
-    public int getLength() {
+    public int getRoadLength() {
         return length;
     }
 
-    public void setLength(int length) {
+    public void setRoadLength(int length) {
         if (length < 12) { // less than twice the size of a bus
             length = 12;
         } else {

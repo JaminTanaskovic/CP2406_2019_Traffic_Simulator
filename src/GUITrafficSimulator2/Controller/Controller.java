@@ -1,8 +1,8 @@
 package GUITrafficSimulator2.Controller;
 
-import GUITrafficSimulator2.Model.Bus;
 import GUITrafficSimulator2.Model.Car;
 import GUITrafficSimulator2.Model.StraightRoad;
+import GUITrafficSimulator2.Model.TrafficLight;
 import GUITrafficSimulator2.View.MainFrame;
 
 import javax.swing.*;
@@ -13,11 +13,11 @@ public class Controller {
 
 
         MainFrame mainFrame = new MainFrame();
-        Car car = new Car(0, 0, 1, 0);
-        Bike bike = new Bike(0, 1, 1, 0);
-        Bus bus = new Bus(1, 0, 0, 1);
-        TJunctionRoad tJunctionRoad = new TJunctionRoad(6, 1, 1, 1);
-        StraightRoad straightRoad = new StraightRoad(12, 1, 2, 1);
+
+        StraightRoad straightRoad1 = new StraightRoad(12, 1, 2);
+        Car car = new Car(0, straightRoad1);
+        GUITrafficSimulator2.Model.TrafficLight trafficLight = new TrafficLight(1, 2);
+
         // FourWayRoad fourWayRoad = new FourWayRoad(18, 1, 1, 1);
 
         mainFrame.setNewCityMenuListener(e -> {
