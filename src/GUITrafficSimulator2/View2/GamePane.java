@@ -8,11 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class MainFrame2 extends JPanel implements ActionListener {
+public class GamePane extends JPanel implements ActionListener {
     private final static Random random = new Random();
     private Vehicle2[] vehicles;
 
-    public MainFrame2(int width, int height, Vehicle2[] vehicles) {
+    public GamePane(int width, int height, Vehicle2[] vehicles) {
         setBackground(Color.BLACK);
         this.vehicles = vehicles;
         setPreferredSize(new Dimension(width, height));

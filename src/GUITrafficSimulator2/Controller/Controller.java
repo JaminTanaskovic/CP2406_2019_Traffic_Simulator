@@ -1,26 +1,57 @@
 package GUITrafficSimulator2.Controller;
 
-import GUITrafficSimulator2.Model.Car;
-import GUITrafficSimulator2.Model.StraightRoad;
-import GUITrafficSimulator2.Model.TrafficLight;
+import GUITrafficSimulator2.Model2.*;
 import GUITrafficSimulator2.View.MainFrame;
+import GUITrafficSimulator2.View2.GamePane;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 
 public class Controller implements ActionListener {
+
+    private final static Random random = new Random();
+
     Controller() {
 
+        final int WIDTH = 500;
+        final int HEIGHT = 500;
+        int speed = 2;
+
+        Vehicle2[] vehicles = new Vehicle2[50];
+        for (int i = 0; i < vehicles.length; ++i) {
+            int x = random.nextInt();
+            int y = random.nextInt();
+            int xDir = random.nextBoolean() ? -1 : 1;
+            int yDir = random.nextBoolean() ? -1 : 1;
+
+            switch (VehicleType.random()) {
+                case CAR:
+                    Color color1 = Color.red;
+                    vehicles[i] = new Car2(x, y, xDir, yDir, color1, 2, 1);
+                    break;
+                case BIKE:
+                    Color color2 = Color.yellow;
+                    vehicles[i] = new Bike2(x, y, xDir, yDir, color2, 1, 1);
+                    break;
+                case BUS:
+                    Color color3 = Color.green;
+                    vehicles[i] = new Bus2(x, y, xDir, yDir, color3, 6, 1);
+                    break;
+            }
+
+            vehicles[i].setSpeed(speed);
+            System.out.println(vehicles[i]);
+        }
+
         MainFrame mainFrame = new MainFrame();
-        Timer timer = new Timer(1000 / 24, this);
-
-        StraightRoad straightRoad1 = new StraightRoad(12, 1, 2);
-        Car car = new Car(0, straightRoad1);
-        GUITrafficSimulator2.Model.TrafficLight trafficLight = new TrafficLight(1, 2);
-
-        // FourWayRoad fourWayRoad = new FourWayRoad(18, 1, 1, 1);
+        GamePane gamePane = new GamePane(WIDTH, HEIGHT, vehicles);
+        mainFrame.add(gamePane, BorderLayout.CENTER);
+        //   mainFrame.pack();
+        mainFrame.setVisible(true);
 
         mainFrame.setNewCityMenuListener(e -> {
             System.out.println(e.getActionCommand());
@@ -74,8 +105,6 @@ public class Controller implements ActionListener {
     public static void main(String[] args) {
 
         Controller controller = new Controller();
-        //       MainFrame mainFrame = new MainFrame();
-        //       mainFrame.setVisible(true);
 
     }
 

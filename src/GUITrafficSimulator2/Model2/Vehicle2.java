@@ -2,6 +2,7 @@ package GUITrafficSimulator2.Model2;
 
 import java.awt.*;
 
+
 public abstract class Vehicle2 {
     int x, y;
     int xDir, yDir; // -1, 0, 1
@@ -23,12 +24,15 @@ public abstract class Vehicle2 {
     }
 
     public void move() {
-        if ((canTurn() == false) && (hasTrafficLight() == false)) {
+        x += speed * xDir;
+        y += speed * yDir;
+ /*       if ((canTurn() == false) && (TrafficLight2.getLightColor() == RED)) {
             setSpeed(2);
             x += speed * xDir;
             y += speed * yDir;
 
-        } else if ((canTurn() == false) && (hasTrafficLight() == true) && (lightColor() == "Green")) {
+        } else if ((canTurn() == false) && (hasTrafficLight() == true) &&
+                (TrafficLight2.getLightColor() == GREEN)) {
             setSpeed(2);
             x += speed * xDir;
             y += speed * yDir;
@@ -37,20 +41,24 @@ public abstract class Vehicle2 {
             determineTurn();
             setSpeed(2);
 
-        } else if ((canTurn() == true) && (hasTrafficLight() == true) && (lightColor() == "Green")) {
+        } else if ((canTurn() == true) && (hasTrafficLight() == true) &&
+                (TrafficLight2.getLightColor() == GREEN)) {
             determineTurn();
             setSpeed(2);
 
-        } else if ((canTurn() == true) && (hasTrafficLight() == true) && (lightColor() == "Red")) {
+        } else if ((canTurn() == true) && (hasTrafficLight() == true) &&
+                (TrafficLight2.getLightColor() == RED)) {
             setSpeed(0);
 
-        } else if ((canTurn() == false) && (hasTrafficLight() == true) && (lightColor() == "Red")) {
+        } else if ((canTurn() == false) && (hasTrafficLight() == true) &&
+                (TrafficLight2.getLightColor() == RED)) {
             setSpeed(0);
 
-        }
+        }*/
     }
 
     private void determineTurn() {
+
     }
 
     private String lightColor() {
@@ -58,11 +66,21 @@ public abstract class Vehicle2 {
     }
 
     private boolean hasTrafficLight() {
-        return false;
+        if (hasTrafficLight() == true) {
+            TrafficLight2.getLightColor();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private boolean canTurn() {
-        return false;
+        if (canTurn() == true) {
+            determineTurn();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public int getX() {

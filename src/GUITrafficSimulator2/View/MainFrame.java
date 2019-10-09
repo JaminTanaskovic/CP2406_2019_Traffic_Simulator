@@ -1,15 +1,17 @@
 package GUITrafficSimulator2.View;
 
+import GUITrafficSimulator2.View2.GamePane;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainFrame extends JFrame implements ActionListener {
+public class MainFrame extends JPanel implements ActionListener {
 
     //creating the frame and panel
     private JFrame frame = new JFrame("GUI Traffic Simulator");
-    private JPanel mainPanel = new JPanel(new BorderLayout());
+    private GamePane gamePane;
 
     //Creating the MenuBar and adding components
     private JMenuBar menuBar = new JMenuBar();
@@ -67,13 +69,12 @@ public class MainFrame extends JFrame implements ActionListener {
         statusLabelStats.setFocusable(false);
 
         bottomPanel.setBackground(Color.cyan);
-        mainPanel.setBackground(Color.gray);
         menuBar.setBackground(Color.cyan);
 
         //Adding Components to the frame.
-        frame.add(bottomPanel, BorderLayout.PAGE_END);
-        frame.add(mainPanel, BorderLayout.CENTER);
-        frame.add(menuBar, BorderLayout.PAGE_START);
+        frame.add(bottomPanel, BorderLayout.SOUTH);
+        //       frame.add(gamePane, BorderLayout.CENTER);
+        frame.add(menuBar, BorderLayout.NORTH);
 
         //adding action listeners to be handled in controller
         stopSim.addActionListener(this);
