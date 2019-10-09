@@ -13,6 +13,7 @@ public class Controller2 {
     public static void main(String[] args) {
         final int WIDTH = 500;
         final int HEIGHT = 500;
+        int speed = 2;
 
         Vehicle2[] vehicles = new Vehicle2[50];
         for (int i = 0; i < vehicles.length; ++i) {
@@ -27,7 +28,7 @@ public class Controller2 {
                     vehicles[i] = new Car2(x, y, xDir, yDir, color1, 2, 1);
                     break;
                 case BIKE:
-                    Color color2 = Color.blue;
+                    Color color2 = Color.yellow;
                     vehicles[i] = new Bike2(x, y, xDir, yDir, color2, 1, 1);
                     break;
                 case BUS:
@@ -36,7 +37,6 @@ public class Controller2 {
                     break;
             }
 
-            int speed = random.nextInt(10) + 1;
             vehicles[i].setSpeed(speed);
             System.out.println(vehicles[i]);
         }

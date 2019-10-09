@@ -16,11 +16,11 @@ public class Bus2 extends Vehicle2 {
     @Override
     public boolean terminate(int boundaryWidth, int boundaryHeight) {
         if ((x < 0 && xDir < 0) || (x + width > boundaryWidth && xDir > 0)) {
-            xDir *= -1;
+            xDir += 10;
             return true;
         }
         if ((y < 0 && yDir < 0) || (y + height > boundaryHeight && yDir > 0)) {
-            yDir *= -1;
+            yDir += 10;
             return true;
         }
         return false;

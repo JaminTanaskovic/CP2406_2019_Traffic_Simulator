@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
-public class MainFrame2 extends JFrame implements ActionListener {
+public class MainFrame2 extends JPanel implements ActionListener {
     private final static Random random = new Random();
     private Vehicle2[] vehicles;
 
@@ -23,7 +23,7 @@ public class MainFrame2 extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         for (Vehicle2 vehicle2 : vehicles) {
-            if (vehicle2.bounce(getWidth(), getHeight())) {
+            if (vehicle2.terminate(getWidth(), getHeight())) {
                 vehicle2.setSpeed(random.nextInt(10) + 1);
             }
             vehicle2.move();

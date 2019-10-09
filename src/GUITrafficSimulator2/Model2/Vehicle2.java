@@ -19,12 +19,86 @@ public abstract class Vehicle2 {
 
     @Override
     public String toString() {
-        return String.format("Shape: %d %d", x, y);
+        return String.format("%d %d", x, y);
     }
 
     public void move() {
-        x += speed * xDir;
-        y += speed * yDir;
+        if ((canTurn() == false) && (hasTrafficLight() == false)) {
+            setSpeed(2);
+            x += speed * xDir;
+            y += speed * yDir;
+
+        } else if ((canTurn() == false) && (hasTrafficLight() == true) && (lightColor() == "Green")) {
+            setSpeed(2);
+            x += speed * xDir;
+            y += speed * yDir;
+
+        } else if ((canTurn() == true) && (hasTrafficLight() == false)) {
+            determineTurn();
+            setSpeed(2);
+
+        } else if ((canTurn() == true) && (hasTrafficLight() == true) && (lightColor() == "Green")) {
+            determineTurn();
+            setSpeed(2);
+
+        } else if ((canTurn() == true) && (hasTrafficLight() == true) && (lightColor() == "Red")) {
+            setSpeed(0);
+
+        } else if ((canTurn() == false) && (hasTrafficLight() == true) && (lightColor() == "Red")) {
+            setSpeed(0);
+
+        }
+    }
+
+    private void determineTurn() {
+    }
+
+    private String lightColor() {
+        return "Green";
+    }
+
+    private boolean hasTrafficLight() {
+        return false;
+    }
+
+    private boolean canTurn() {
+        return false;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getxDir() {
+        return xDir;
+    }
+
+    public void setxDir(int xDir) {
+        this.xDir = xDir;
+    }
+
+    public int getyDir() {
+        return yDir;
+    }
+
+    public void setyDir(int yDir) {
+        this.yDir = yDir;
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 
     public void setSpeed(int speed) {
