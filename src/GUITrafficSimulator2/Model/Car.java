@@ -1,6 +1,8 @@
 package GUITrafficSimulator2.Model;
 
-public class Car {
+import java.awt.*;
+
+public class Car extends Vehicle {
 
     private int position;
     private int iterationCount = 0;
@@ -9,6 +11,7 @@ public class Car {
     private StraightRoad straightRoad1;
 
     public Car(int position, StraightRoad straightRoad1) {
+        super();
         this.position = position;
         this.straightRoad1 = straightRoad1;
     }
@@ -19,6 +22,12 @@ public class Car {
 
     public void setPosition(int position) {
         this.position = position;
+    }
+
+    @Override
+    public void draw(Graphics g) {
+        g.setColor(color);
+        //     g.fillRect(x, y, width, height);
     }
 
     public StraightRoad getRoad() {

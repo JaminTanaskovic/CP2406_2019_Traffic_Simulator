@@ -1,3 +1,4 @@
+/*
 package GUITrafficSimulator2.Test;
 
 import ConsoleSimulator.TrafficLight;
@@ -7,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TrafficLightTest {
 
-    private TrafficLight trafficLight = new TrafficLight(1, 3);
+    private TrafficLightTest trafficLight = new TrafficLightTest();
 
     @Test
     void TestTrafficLight() {
@@ -18,4 +19,4 @@ class TrafficLightTest {
         trafficLight.setChangeCount(4);
         assertEquals(4, trafficLight.getChangeCount());
     }
-}
+}*/
