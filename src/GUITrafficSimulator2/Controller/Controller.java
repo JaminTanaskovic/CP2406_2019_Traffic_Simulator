@@ -6,12 +6,10 @@ import GUITrafficSimulator2.View2.GamePane;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Random;
 
 
-public class Controller implements ActionListener {
+public class Controller {
 
     private final static Random random = new Random();
 
@@ -47,15 +45,12 @@ public class Controller implements ActionListener {
             System.out.println(vehicles[i]);
         }
 
-        MainFrame mainFrame = new MainFrame();
         GamePane gamePane = new GamePane(WIDTH, HEIGHT, vehicles);
-        mainFrame.add(gamePane, BorderLayout.CENTER);
-        //   mainFrame.pack();
+        MainFrame mainFrame = new MainFrame(gamePane);
         mainFrame.setVisible(true);
 
         mainFrame.setNewCityMenuListener(e -> {
             System.out.println(e.getActionCommand());
-
             // create new game panel
         });
 
@@ -81,6 +76,8 @@ public class Controller implements ActionListener {
             String input = JOptionPane.showInputDialog("Enter The Time to Update Movement:");
             int spawnInput = Integer.parseInt(input);
             System.out.println(spawnInput);
+            
+            //make custom dialog
         });
 
         mainFrame.setVehicleRateMenuListener(e -> {
@@ -89,6 +86,7 @@ public class Controller implements ActionListener {
             String input = JOptionPane.showInputDialog("Enter Amount of Vehicles to Spawn:");
             int vehicleInput = Integer.parseInt(input);
             System.out.println(vehicleInput);
+            //make custom dialog
         });
 
         mainFrame.setRunSimMenuListener(e -> {
@@ -105,11 +103,5 @@ public class Controller implements ActionListener {
     public static void main(String[] args) {
 
         Controller controller = new Controller();
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
     }
 }

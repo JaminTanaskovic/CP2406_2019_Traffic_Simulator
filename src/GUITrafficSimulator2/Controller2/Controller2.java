@@ -1,3 +1,4 @@
+/*
 package GUITrafficSimulator2.Controller2;
 
 import GUITrafficSimulator2.Model2.*;
@@ -40,7 +41,8 @@ public class Controller2 {
             System.out.println(vehicles[i]);
         }
 
-        MainFrame mainFrame = new MainFrame();
+        MainFrame mainFrame = new MainFrame(gamePane);
+*/
 /*        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         GamePane gamePane = new GamePane(WIDTH, HEIGHT, vehicles);
@@ -48,7 +50,9 @@ public class Controller2 {
 
         mainFrame.pack();
         mainFrame.setLocationRelativeTo(null);
-        */
+        *//*
+
     }
 }
+*/
 

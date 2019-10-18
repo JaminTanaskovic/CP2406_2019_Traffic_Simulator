@@ -9,9 +9,10 @@ import java.awt.event.ActionListener;
 
 public class MainFrame extends JPanel implements ActionListener {
 
+    private final GamePane gamePane;
+
     //creating the frame and panel
     private JFrame frame = new JFrame("GUI Traffic Simulator");
-    private GamePane gamePane;
 
     //Creating the MenuBar and adding components
     private JMenuBar menuBar = new JMenuBar();
@@ -39,7 +40,8 @@ public class MainFrame extends JPanel implements ActionListener {
     private JLabel statusLabel = new JLabel("Status", SwingConstants.RIGHT);
     private JTextField statusLabelStats = new JTextField("Status stats");
 
-    public MainFrame() {
+    public MainFrame(GamePane gamePane) {
+        this.gamePane = gamePane;
 
         menuBar.add(m1);
         menuBar.add(m2);
@@ -73,7 +75,7 @@ public class MainFrame extends JPanel implements ActionListener {
 
         //Adding Components to the frame.
         frame.add(bottomPanel, BorderLayout.SOUTH);
-        //       frame.add(gamePane, BorderLayout.CENTER);
+        frame.add(gamePane, BorderLayout.CENTER);
         frame.add(menuBar, BorderLayout.NORTH);
 
         //adding action listeners to be handled in controller
