@@ -108,7 +108,9 @@ public class Controller {
         // Add straight road to game panel
         mainFrame.straightRoadListener(e -> {
 
-
+            int roadLengthInput = Integer.parseInt(JOptionPane.showInputDialog("Enter the road length ( min = 6, max = 30"));
+            //          int roadLengthInput = Integer.parseInt(input);
+            StraightRoad.setWidth(roadLengthInput);
             System.out.println(e.getActionCommand());
         });
 

@@ -5,9 +5,7 @@ import java.awt.*;
 public class Car2 extends Vehicle2 {
     private int width, height;
 
-    public Car2(int x, int y,
-                int xDir, int yDir, Color color,
-                int width, int height) {
+    public Car2(int x, int y, int xDir, int yDir, Color color, int width, int height) {
         super(x, y, xDir, yDir, color);
         this.width = width;
         this.height = height;
